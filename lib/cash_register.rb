@@ -12,7 +12,7 @@ class CashRegister
   end 
   
   def add_item(title, price, optional = 1)
-    @@items << title.split * optional 
+    @items << title.split * optional 
     @total = @total + (price.to_f * optional) 
   end 
   
