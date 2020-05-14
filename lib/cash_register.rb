@@ -4,7 +4,7 @@ class CashRegister
   def initialize(discount = 0)
     @total = 0
     @discount = discount 
-    @items = []
+    @items = {}
   end 
   
   def total=(total)
@@ -12,7 +12,11 @@ class CashRegister
   end 
   
   def add_item(title, price, optional = 1)
-    @items << title.split * optional 
+    if optional == 1
+      @items[:title] = price
+    else 
+      array = title.split * optional
+      array.each {|element| @items[element] = price
     @total = @total + (price.to_f * optional) 
   end 
   
