@@ -27,7 +27,7 @@ class CashRegister
   
   def items 
     array = []
-    
+    @total.keys
   end 
   
   def void_last_transaction
