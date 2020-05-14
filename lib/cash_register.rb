@@ -27,7 +27,8 @@ class CashRegister
   
   def items 
     array = []
-    @items.keys
+    @items.each do |key, value|
+      array << key.split * value[:times]
   end 
   
   def void_last_transaction
