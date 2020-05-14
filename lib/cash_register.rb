@@ -1,4 +1,5 @@
 class CashRegister
+  @@items = []
   attr_reader :total, :discount
   def initialize(discount = 0)
     @total = 0
@@ -10,8 +11,8 @@ class CashRegister
   end 
   
   def add_item(title, price, optional = 1)
-    @total = @total + (price.to_f * optional) 
     @@items << title
+    @total = @total + (price.to_f * optional) 
   end 
   
   def apply_discount
@@ -24,6 +25,6 @@ class CashRegister
   end 
   
   def items 
-    @@items = []
+    @@items
   end 
 end 
