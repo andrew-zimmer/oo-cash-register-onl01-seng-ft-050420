@@ -12,12 +12,7 @@ class CashRegister
   end 
   
   def add_item(title, price, optional = 1)
-    if optional == 1
-      @items[price] = price
-    else 
-      array = title.split
-      (array*3).each {|element| @items[element] = price}
-    end 
+    @items[title] = {price: price, times: optional}
     @total = @total + (price.to_f * optional) 
   end 
   
@@ -31,7 +26,8 @@ class CashRegister
   end 
   
   def items 
-    @items.keys.flatten
+    array = []
+    
   end 
   
   def void_last_transaction
