@@ -11,7 +11,7 @@ class CashRegister
   end 
   
   def add_item(title, price, optional = 1)
-    @@items << title 
+    @@items << title.to_a * optional 
     @total = @total + (price.to_f * optional) 
   end 
   
@@ -25,6 +25,6 @@ class CashRegister
   end 
   
   def items 
-    @@items
+    @@items.flatten
   end 
 end 
