@@ -16,7 +16,8 @@ class CashRegister
       @items[:title] = price
     else 
       array = title.split * optional
-      array.each {|element| @items[element] = price
+      array.each {|element| @items[element] = price}
+    end 
     @total = @total + (price.to_f * optional) 
   end 
   
