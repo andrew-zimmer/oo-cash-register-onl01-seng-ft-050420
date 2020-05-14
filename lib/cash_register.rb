@@ -13,7 +13,7 @@ class CashRegister
   
   def add_item(title, price, optional = 1)
     if optional == 1
-      @items[:title] = price
+      @items[title] = price
     else 
       array = title.split
       (array*3).each {|element| @items[element] = price}
