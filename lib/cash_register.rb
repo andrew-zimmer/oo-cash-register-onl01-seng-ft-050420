@@ -39,5 +39,6 @@ class CashRegister
       @items[items[-1]][:times] -1 
     else 
       @items.delete(items[-1])
+    end 
   end 
 end 
