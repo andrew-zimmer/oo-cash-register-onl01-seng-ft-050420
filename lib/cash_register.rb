@@ -12,7 +12,7 @@ class CashRegister
   end 
   
   def add_item(title, price, optional = 1)
-    @items[title] = {price: price*optional, times: optional}
+    @items[title] = {price: price.to_f*optional.to_f, times: optional.to_f}
     @total = @total + (price.to_f * optional) 
   end 
   
