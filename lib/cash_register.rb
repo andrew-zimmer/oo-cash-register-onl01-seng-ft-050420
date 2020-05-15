@@ -12,7 +12,7 @@ class CashRegister
   end 
   
   def add_item(title, price, optional = 1)
-    @items[title] = {price: price, times: optional}
+    @items[title] = {price: price*optional, times: optional}
     @total = @total + (price.to_f * optional) 
   end 
   
@@ -34,7 +34,7 @@ class CashRegister
   end 
   
   def void_last_transaction
-    @total = @total - @items[items[-1]][:price]
+    @total = @total - (@items[items[-1]][:price] / @items[items[-1]][:times]
     if @items[items[-1]][:times] > 1 
       @items[items[-1]][:times] -1 
     else 
